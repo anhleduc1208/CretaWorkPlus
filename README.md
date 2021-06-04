@@ -1,1 +1,1 @@
-Plug-in Test
+Phát triển phần đồng bộ KIOTVIET và WOOCOMMERCE
