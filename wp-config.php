@@ -1,6 +1,7 @@
 
-<!-- đoạn code này trên svr -->
+
 <?php
+	//đoạn config này trên svr
 	/**
 	 * The base configuration for WordPress
 	 *
@@ -93,8 +94,9 @@
 ?>
 
 
-<!-- Đoạn code này trên local host đức anh -->
+
 <?php
+	// Đoạn code này trên local host đức anh 
 	// /**
 	//  * The base configuration for WordPress
 	//  *
