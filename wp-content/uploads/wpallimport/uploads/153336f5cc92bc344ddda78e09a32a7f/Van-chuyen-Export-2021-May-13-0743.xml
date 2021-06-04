@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<node>
+		<id><![CDATA[2000]]></id>
+		<title><![CDATA[Chành xe Thanh Lâm 1]]></title>
+		<content><![CDATA[]]></content>
+		<excerpt><![CDATA[]]></excerpt>
+		<date><![CDATA[5/6/2021]]></date>
+		<posttype><![CDATA[cr_carrier]]></posttype>
+		<permalink><![CDATA[http://creta.work/cr_carrier/cxl1/]]></permalink>
+		<imageurl><![CDATA[]]></imageurl>
+		<imagetitle><![CDATA[]]></imagetitle>
+		<imagecaption><![CDATA[]]></imagecaption>
+		<imagedescription><![CDATA[]]></imagedescription>
+		<imagealttext><![CDATA[]]></imagealttext>
+		<imagefeatured><![CDATA[]]></imagefeatured>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<code><![CDATA[GV0050]]></code>
+		<address><![CDATA[a:1:{i:0;a:3:{s:7:"address";s:15:"85 Bảy Hiền";s:4:"time";s:2:"50";s:5:"start";a:3:{i:0;s:5:"10:10";i:1;s:5:"15:15";i:2;s:5:"16:20";}}}]]></address>
+		<title_2><![CDATA[]]></title_2>
+		<post_title><![CDATA[]]></post_title>
+		<wptr_hide_title><![CDATA[]]></wptr_hide_title>
+		<_wp_page_template><![CDATA[]]></_wp_page_template>
+		<status><![CDATA[publish]]></status>
+		<authorid><![CDATA[1]]></authorid>
+		<authorusername><![CDATA[admin]]></authorusername>
+		<authoremail><![CDATA[vothanhlam1793@gmail.com]]></authoremail>
+		<authorfirstname><![CDATA[]]></authorfirstname>
+		<authorlastname><![CDATA[]]></authorlastname>
+		<slug><![CDATA[cxl1]]></slug>
+		<format><![CDATA[]]></format>
+		<template><![CDATA[]]></template>
+		<parent><![CDATA[0]]></parent>
+		<parentslug><![CDATA[0]]></parentslug>
+		<order><![CDATA[0]]></order>
+		<commentstatus><![CDATA[closed]]></commentstatus>
+		<pingstatus><![CDATA[closed]]></pingstatus>
+		<postmodifieddate><![CDATA[5/6/2021]]></postmodifieddate>
+	</node>
+</data>

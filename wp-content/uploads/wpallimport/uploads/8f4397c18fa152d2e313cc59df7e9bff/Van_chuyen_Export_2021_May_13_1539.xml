@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<node>
+		<id><![CDATA[1445]]></id>
+		<title><![CDATA[Tên chành xe đầu tiên]]></title>
+		<content><![CDATA[]]></content>
+		<code><![CDATA[GV0501]]></code>
+		<address><![CDATA[a:1:{i:0;a:4:{s:7:"address";s:0:"";s:13:"addressArrive";s:0:"";s:4:"time";s:0:"";s:5:"start";a:2:{i:0;s:5:"00:29";i:1;s:5:"21:23";}}}]]></address>
+	</node>
+</data>
