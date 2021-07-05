@@ -32,7 +32,7 @@
             wp_reset_postdata();
 
             $invoice_obj = new Cr_Invoice();
-            $invoice_obj->logNormal($_GET['code'],'Đơn hàng đã được đóng gói, chuyển sang pha giao vận');
+            $invoice_obj->logNormal($_GET['code'],'Đóng gói hoàn tất - chờ được giao.');
 
         }  
     }

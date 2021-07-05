@@ -77,7 +77,7 @@
 
             $invoice_obj = new Cr_Invoice();
             if ($old_delivery_status == 'CHO_LEN_KE_HOACH') {
-                $invoice_obj->logNormal($_GET['code'],'Hóa đơn vừa được lên kế hoạch, chuyển sang pha đóng gói');
+                $invoice_obj->logNormal($_GET['code'],'Đang đóng gói');
             } else {
                 $invoice_obj->logWarning($_GET['code'],'Kế hoạch giao vận của hóa đơn vừa được cập nhật lại. Lưu ý nhé!');
             }
@@ -302,6 +302,8 @@
                         </table>
                     </div>                    
                 </div>
+                
+                
             </div>
 
             <div id="info-customer" class="w3-half w3-panel ">

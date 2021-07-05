@@ -37,7 +37,7 @@
             wp_reset_postdata();
 
             $invoice_obj = new Cr_Invoice();
-            $invoice_obj->logNormal($_GET['code'],'Đơn hàng vừa ra khỏi kho, kinh doanh xác nhận lại với khách nhé');
+            $invoice_obj->logNormal($_GET['code'],'Đơn hàng đã được chuyển');
         }  
     }
 ?>

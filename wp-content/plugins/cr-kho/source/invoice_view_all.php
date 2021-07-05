@@ -61,11 +61,11 @@
         var xhttp = new XMLHttpRequest();
         var url = "";
         if (str == 1) {
-            url = "http://creta.work/wp-json/wp/v2/invoices?_fields=id,code,hiddenCode,customerInfo,purchaseDate,deliveryStatus,statusInv&meta_query[0][key]=statusInv&meta_query[0][value]=official&meta_query[0][compare]==&per_page=40&orderby=title&meta_key=code&order=desc";
+            url = "http://creta.work/wp-json/wp/v2/invoices?_fields=id,code,smsHistory,hiddenCode,customerInfo,purchaseDate,deliveryStatus,statusInv&meta_query[0][key]=statusInv&meta_query[0][value]=official&meta_query[0][compare]==&per_page=40&orderby=title&meta_key=code&order=desc";
         } else if (str==0) {
-            url = "http://creta.work/wp-json/wp/v2/invoices?_fields=id,code,hiddenCode,customerInfo,purchaseDate,deliveryStatus,statusInv&meta_query[0][key]=statusInv&meta_query[0][value]=canceled&meta_query[0][compare]==&per_page=40&orderby=title&meta_key=code&order=desc";
+            url = "http://creta.work/wp-json/wp/v2/invoices?_fields=id,code,smsHistory,hiddenCode,customerInfo,purchaseDate,deliveryStatus,statusInv&meta_query[0][key]=statusInv&meta_query[0][value]=canceled&meta_query[0][compare]==&per_page=40&orderby=title&meta_key=code&order=desc";
         }   else {
-            url = "http://creta.work/wp-json/wp/v2/invoices?_fields=id,code,hiddenCode,customerInfo,purchaseDate,deliveryStatus,statusInv&meta_query[0][key]=statusInv&meta_query[0][value]=official&meta_query[0][compare]==&orderby=title&meta_key=code&order=desc&per_page=40&meta_key=deliveryStatus&meta_value=" + str;
+            url = "http://creta.work/wp-json/wp/v2/invoices?_fields=id,code,smsHistory,hiddenCode,customerInfo,purchaseDate,deliveryStatus,statusInv&meta_query[0][key]=statusInv&meta_query[0][value]=official&meta_query[0][compare]==&orderby=title&meta_key=code&order=desc&per_page=40&meta_key=deliveryStatus&meta_value=" + str;
         }        
         var data ="";
         var dataOBJ;
@@ -111,12 +111,24 @@
                 var toDoURL = "";
                 var detailURL = "http://creta.work/invoice-single-detail/?code=" + invCode;
                 var toCusURL="";
-                if (invHiddenCode=='') {
-                    toCusURL = "http://creta.work/thong-tin-don-hang/?code=" + invCode;
+                // if (invHiddenCode=='') {
+                //     toCusURL = "http://creta.work/thong-tin-don-hang/?code=" + invCode;
+                // } else {
+                //     toCusURL = "http://creta.work/thong-tin-don-hang/?code=" + invHiddenCode;
+                // }
+                var smsURL = "http://creta.work/invoice-send-sms/?code=" + invCode;
+                var smsHis = single_inv.smsHistory;
+                var smsCount = 0;
+                var smsColor = "khaki";
+                if (Array.isArray(smsHis)) {
+                    smsCount = smsHis.length;
+                    if (smsCount > 0) {
+                        smsColor = "green";
+                    }
                 } else {
-                    toCusURL = "http://creta.work/thong-tin-don-hang/?code=" + invHiddenCode;
+                    smsCount = 0;
+                    
                 }
-                
                 var num = 0;
                 var color = "red";
                 var state ="";
@@ -173,7 +185,7 @@
                     txt += "<a  href='" + planURL + "'><button class='w3-button w3-khaki w3-round '>Plan GV</button></a>";
 
                     txt += "&nbsp;|&nbsp;";
-                    txt += "<a  href='" + toCusURL + "'><button class='w3-button w3-khaki w3-round '>Trang KH</button></a>";
+                    txt += "<a  href='" + smsURL + "'><button class='w3-button w3-" +smsColor + " w3-round '>SMS(" + smsCount + ")</button></a>";
                 
                 txt += "</td>";
                 txt += "<td class='w3-center'>";

@@ -181,3 +181,32 @@ piklist('field', array(
         ),
     )     
 ));
+
+piklist('field', array(
+    'type' => 'group',
+    'field' => 'smsHistory',
+    'label' => 'Lịch sử tin nhắn đơn hàng',
+    'description' => 'Chi tiết về các thông tin đơn hàng bị thay đổi',
+    'add_more' => true,
+    'fields' => array(
+        array(
+            'type' => 'text',
+            'field' => 'datetime',
+            'label' => 'Thời gian',
+            'columns' => 3
+        ),
+        array(
+            'type' => 'text',
+            'field' => 'phone',
+            'label' => 'Số điện thoại',
+            'columns' => 3
+        ),
+        array(
+            'type' => 'textarea',
+            'field' => 'content',
+            'label' => 'Nội dung',
+            'columns' => 6
+        ),
+      
+    )     
+));

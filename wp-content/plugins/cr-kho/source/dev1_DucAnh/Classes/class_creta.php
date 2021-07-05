@@ -353,7 +353,8 @@
                 'customerInfo',
                 'planInfo',
                 'hiddenCode',
-                'logHistory'
+                'logHistory',
+                'smsHistory'
             ); 
             $this->creta_wp_query = new WP_Query();  
             $this->creta_logger = new Cr_Logger();       
@@ -482,6 +483,37 @@
                 array_push($recent_invoices_full,$single);
             }
             return $recent_invoices_full; 
+        }
+
+        public function addSMSHistory($code,$phone,$content) {
+            $this->code = $code;
+
+            date_default_timezone_set("Asia/Ho_Chi_Minh");
+            $real_time = date("d/m/Y H:i:s");
+            $sms_data = array (
+                "datetime" => $real_time,
+                "phone" => $phone,
+                "content" => $content
+            );
+
+            $rs = $this->findIdByCode();
+            if ($rs['count'] == 1) {
+                $this->id = $rs['id'][0];
+                $this_id = $this->id;  
+                
+                $old_sms_data = get_post_meta($this_id,'smsHistory',true);           
+                if ($old_sms_data) {
+                    array_unshift($old_sms_data,$sms_data);  
+                } else {
+                    $old_sms_data = array($sms_data);
+                }                                      
+                update_post_meta($this_id,'smsHistory',$old_sms_data);
+                // $refresh_log_data = array();
+                // update_post_meta($this_id,'logHistory',$refresh_log_data);
+                return $old_sms_data;
+            } else {
+                return "ko co code nay";
+            }
         }
         
     }

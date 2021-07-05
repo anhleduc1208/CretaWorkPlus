@@ -232,6 +232,15 @@ register_rest_field('cr_invoice','hiddenCode',array(
     },
     'schema'            => null
 ));
+register_rest_field('cr_invoice','smsHistory',array(
+    'get_callback'      => function ( $post ) {         
+        return get_post_meta( $post['id'], 'smsHistory', true );
+    },
+    'update_callback'   => function ( $value, $object ) {
+        update_post_meta( $object->ID, 'smsHistory', $value );
+    },
+    'schema'            => null
+));
 register_rest_field('cr_invoice','logHistory',array(
     'get_callback'      => function ( $post ) {         
         return get_post_meta( $post['id'], 'logHistory', true );
@@ -241,6 +250,8 @@ register_rest_field('cr_invoice','logHistory',array(
     },
     'schema'            => null
 ));
+
+
 register_rest_field('cr_log','code',array(
     'get_callback'      => function ( $post ) {         
         return get_post_meta( $post['id'], 'code', true );

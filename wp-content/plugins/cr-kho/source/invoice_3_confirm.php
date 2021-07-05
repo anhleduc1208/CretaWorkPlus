@@ -31,7 +31,7 @@
             }
             wp_reset_postdata();
             $invoice_obj = new Cr_Invoice();
-            $invoice_obj->logNormal($_GET['code'],'Đơn hàng đã tới tay khách!! Hooray');
+            $invoice_obj->logNormal($_GET['code'],'Đã xác nhận nhận hàng từ khách');
         }  
     }
 ?>

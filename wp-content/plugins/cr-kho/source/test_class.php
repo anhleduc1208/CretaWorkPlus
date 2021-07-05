@@ -1,5 +1,7 @@
 <?php
-    include_once 'dev1_DucAnh/Classes/class_creta.php'
+    include_once 'dev1_DucAnh/Classes/class_creta.php';
+    include_once 'SMS/src/Playsms/Webservices.php';
+    include_once 'SMS/My-Code/SendSms.php';
 ?>
 <h2>Test class</h2>
 
@@ -12,19 +14,36 @@
     // $my_invs = $invoice_obj->findIdsByArgs($args);   
     // $cnt = $my_invs['count'];
     // $customer_obj = new Cr_Customer();
-    // for ($x = 0; $x < $cnt; $x++) {
+    // for ($x = 0; $x <br $cnt; $x++) {
     //     $id = $my_invs['id'][$x];
     //     // $cus_code = get_post_meta($id,'customerCode',true);
     //     // $inv_code = get_post_meta($id,'code',true);
     //     // $purchaseDate = get_post_meta($id,'purchaseDate',true);
     //     //update_post_meta($id,'statusInv','official');
     // }
-        echo 'start';
-    $invoice_obj = new Cr_Invoice();
-    $data = $invoice_obj->findRecentInvoices("HD004780");
-        print_r($data);
+    // echo 'start';
+    // $invoice_obj = new Cr_Invoice();
+    // $data = $invoice_obj->findRecentInvoices("HD004780",5);
+    //     print_r($data);
+    // echo 'end';
 
-    echo 'end';
+    $phone= '0919986654';    
+    $msg = "Mến chào anh A\n";
+    $msg .= "Cảm ơn anh đã tin tưởng Creta\n";
+    $msg .= "Mời anh theo dõi thông tin giao vận đơn hàng ở link này nhé: http://creta.work \n";
+    $msg .= "Trân trọng!!";
+    echo 'sendsms';
+    echo '</br>';
+    // sendSMS($phone,$msg);
+    echo '</br>';
+    echo 'endSMS';
+
+    // echo '</br>';
+    // echo 'get credit';
+    // $credit = getCredit();
+    // echo '</br>';
+    // echo 'end get credit';
+    
 
 
     // $my_product_list = $invoice_obj->productList("HD004720");   

@@ -169,7 +169,7 @@
     ?>
 
         <!-- Hiển thị đơn -->   
-        <div class='w3-container w3-white w3-responsive'> 
+        <div class=' w3-white w3-responsive'> 
             <!-- Màn hình bự -->
             <div id="origin" class="w3-panel w3-white  w3-hide-small w3-hide-medium" style="color:black">
                 <div class='w3-container'>
@@ -361,8 +361,8 @@
                 </div>
 
                 <div id="invoice-info" class="w3-container w3-white">
-                    <div class="w3-row">
-                        <div class="w3-half w3-panel">
+                    <div class="w3-row w3-white">
+                        <div class="w3-half w3-white w3-panel">
 
                             <div class="w3-panel w3-round-xlarge w3-theme-l5 w3-border-theme" style="border:6px solid ">                
                                     <div class="w3-panel">
@@ -388,11 +388,11 @@
                                 </div>             
                             </div>
 
-                        <div class="w3-half w3-panel">                    
+                        <div class="w3-half w3-white w3-panel">                    
                             
-                            <div id="history-invoices" class="w3-panel w3-round-xlarge w3-theme-l5 w3-border-theme" style="border:6px solid ">                
-                                <div class="w3-panel">
-                                    <h2 class="w3-center"><strong>Lịch sử mua hàng gần đây</strong></h2>
+                            <div id="history-invoices" class="w3-panel w3-white w3-round-xlarge w3-theme-l5 w3-border-theme" style="border:6px solid ">                
+                                <div class="w3-panel w3-white">
+                                    <h2 class="w3-center w3-white"><strong>Lịch sử mua hàng gần đây</strong></h2>
                                 </div>
                                 <div >
                                     <table class="w3-table-all w3-striped w3-hoverable w3-border w3-card">
@@ -710,8 +710,8 @@
             </div>      
 
             <!-- Màn hình nhỏ -->
-            <div id="origin" class="w3-panel w3-white  w3-hide-large w3-hide-medium" style="color:black">
-                <div class='w3-container'>
+            <div id="origin" class="w3-white  w3-hide-large w3-hide-medium" style="color:black">
+                <div class='w3-panel'>
                     <a class="w3-right"><p>Xin chào, anh <?=$real_name?>!!!</p></a>                
                 </div>
                 <div class='w3-row'>
@@ -729,7 +729,10 @@
                         
                         
                 </div>
-                        <a href="https://creta.vn/"><button class="w3-button w3-right w3-<?=$color_status?> w3-round">Creta.vn</button></a>
+                <div class="w3-container">
+                    <a href="https://creta.vn/"><button class="w3-button w3-right w3-<?=$color_status?> w3-round">Creta.vn</button></a>
+                </div>
+                        
 
                 <div id="delivery-status" class="w3-container w3-white">        
                     <div  class="w3-panel w3-round-xlarge w3-theme-l5 w3-border-<?=$color_status?>" style="border:8px solid" >
@@ -756,19 +759,23 @@
 
                                         
                                             <div class="row">
-                                                <strong>- Thời gian dự kiến nhà xe chạy:</strong> </br><?=$i_plan_crRealStart?> 
+                                                <strong> - Thời gian dự kiến nhà xe chạy:</strong> </br><?=$i_plan_crRealStart?> 
                                             </div>
                                             </br>
                                             <div class="row"> 
-                                                <strong>- Thời gian dự kiến gửi hàng cho nhà xe:</strong> </br><?=$i_plan_deTime?> 
+                                                <strong> - Thời gian dự kiến gửi hàng cho nhà xe:</strong> </br><?=$i_plan_deTime?> 
                                             </div>
                                             </br>   
                                             <div class="row"> 
-                                                <strong>- Nhà xe nhận:</strong> 
+                                                <div> <strong> - Nhà xe nhận:</strong> 
+                                                </div>
+                                               
                                                 </br> 
-                                                <?=$i_plan_crRealName?>   |
+                                                <div>
+                                                <span><?=$i_plan_crRealName?></span>  |  <span><?=$i_plan_crPhone?></span>
+                                                </div>                               
                                                 
-                                                <?=$i_plan_crPhone?> 
+                                               
                                             </div>
                                                 
                                             
@@ -1012,7 +1019,7 @@
                 </div>
                 <div id="form-code" class="w3-panel w3-quarter ">
                     <form method="get">
-                        <input type="text" name="code" value="<?php if ($_GET['code']) {echo $_GET['code'];} else {echo "HD";}?>"> 
+                        <input type="text" name="code" value="<?php if ($_GET['code']) {echo $_GET['code'];} else {echo "";}?>"> 
                 </div>
                 <div class="w3-quarter w3-panel">  
                     <input type="submit" class="w3-button w3-gray" value="Enter"> 

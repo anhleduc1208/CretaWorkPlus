@@ -35,10 +35,18 @@
                                         <div class="card bg-info text-white">
     
                                             <div class="card-body">
-                                                Tên chành xe:
-                                                <select v-model="c.code" class="form-control">
+                                                Mã chành xe:
+                                                <!-- <select v-model="c.code" class="form-control">
                                                     <option v-for="i in carriers" v-bind:value="i.code">{{i.code}} - {{i.title.rendered}}</option>
-                                                </select>
+                                                </select> -->
+                                                
+                                                <input type="text"  list="carriers-list" v-model="c.code" class="form-control" > 
+                                                <datalist id="carriers-list" display:none>                                          
+                                                   
+                                                    <option  v-for="carrier in carriers" v-bind:label="carrier.title.rendered" v-bind:value="carrier.code"></option>
+                                                   
+                                                </datalist> 
+                                                
                                             </div>
                                         </div>
                                         <div class="card bg-info text-white">
@@ -109,6 +117,7 @@
                     id: 0,
                     count: 0,
                     customer: {},
+                    carrier:'',
                     carriers: [],
                     count_up: 0,
                     loading_flag: true,
